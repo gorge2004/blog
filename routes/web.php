@@ -17,13 +17,13 @@ use App\Http\Controllers\CursoController;
 
 Route::get('/', HomeController::class);
 
-Route::get('cursos',[CursoController::class, 'index']);
-// laravel lee de arriba abajo . si creamos la ruta create de ultima 
+Route::get('cursos',[CursoController::class, 'index'])->name("cursos.index");
+// laravel lee de arriba abajo . si creamos la ruta create de ultima
 //tomara  cursos/{cursos} como si fuera la create
-Route::get('cursos/create', [CursoController::class, 'create']);
+Route::get('cursos/create', [CursoController::class, 'create'])->name("cursos.create");
 
-// simbolo ? indica parametro opcional 
-Route::get('cursos/{curso}/{categoria?}', [CursoController::class, 'show']);
+// simbolo ? indica parametro opcional
+Route::get('cursos/{id}/{categoria?}', [CursoController::class, 'show'])->name("cursos.show");
 
 
 
