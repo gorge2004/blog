@@ -15,8 +15,8 @@ use App\Http\Controllers\CursoController;
 */
 // indicando a la ruta el controller a usar . EN laravel 8
 
-Route::get('/', HomeController::class);
-
+/* Route::get('/', HomeController::class);
+ */
 Route::get('cursos',[CursoController::class, 'index'])->name("cursos.index");
 // laravel lee de arriba abajo . si creamos la ruta create de ultima
 //tomara  cursos/{cursos} como si fuera la create
@@ -33,3 +33,8 @@ Route::put('cursos/{curso}', [CursoController::class, 'update'])->name('cursos.u
 
 // indicando a la ruta el controller a usar . EN laravel versiones anteriores
 //Route::get('/', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
